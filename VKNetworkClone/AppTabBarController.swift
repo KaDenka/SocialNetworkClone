@@ -15,6 +15,11 @@ class AppTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], for: .normal)
         
         self.tabBar.unselectedItemTintColor = UIColor.white
+        
+        UsersDataStorage.shared.firstLoadFriendList()
+        GroupsDataStorage.shared.firstLoadUsersGroupList()
+        GroupsDataStorage.shared.firstLoadGlobalGroupList()
+    
     }
     
 
