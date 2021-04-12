@@ -63,6 +63,8 @@ class SearchGroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let addAction = UIContextualAction(style: .normal, title: "Add") { (action, view, nil) in
             GroupsDataStorage.shared.userGroupsArray.append(GroupsDataStorage.shared.globalGroupsArray[indexPath.row])
+            GroupsDataStorage.shared.globalGroupsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
         }
         addAction.backgroundColor = #colorLiteral(red: 0.1648246646, green: 0.40975371, blue: 0.5832718015, alpha: 1)
