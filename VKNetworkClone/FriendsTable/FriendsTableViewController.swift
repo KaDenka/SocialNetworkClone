@@ -30,7 +30,7 @@ class FriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,7 +59,7 @@ class FriendsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == friendsToPhotoSegue else { return }
-        guard let destination = segue.destination as? FriendsPhotoCollectionViewController else { return }
+        guard let destination = segue.destination as? FriendPhotoViewController else { return }
         destination.indexPathOfFriend = tableView.indexPathForSelectedRow!
     }
     

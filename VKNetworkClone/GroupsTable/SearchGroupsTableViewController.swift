@@ -13,6 +13,8 @@ class SearchGroupsTableViewController: UITableViewController {
     
     let searchGroupCellIdentifier = "searchGroupCellID"
     
+    let unwindSegueIdentifier = "fromGlobalToUserGroupsSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,17 +64,28 @@ class SearchGroupsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let addAction = UIContextualAction(style: .normal, title: "Add") { (action, view, nil) in
-            GroupsDataStorage.shared.userGroupsArray.append(GroupsDataStorage.shared.globalGroupsArray[indexPath.row])
-            GroupsDataStorage.shared.globalGroupsArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            var haveGroupInUserListFlag = false
+            
+            for group in GroupsDataStorage.shared.userGroupsArray {
+                if group == GroupsDataStorage.shared.globalGroupsArray[indexPath.row] {
+                    haveGroupInUserListFlag = true
+                }
+            }
+            
+            if !haveGroupInUserListFlag {
+                GroupsDataStorage.shared.userGroupsArray.append(GroupsDataStorage.shared.globalGroupsArray[indexPath.row])
+            }
             tableView.reloadData()
+            
+            self.performSegue(withIdentifier: "fromGlobalToUserGroupsSegue", sender: nil)
+            
         }
         addAction.backgroundColor = #colorLiteral(red: 0.1648246646, green: 0.40975371, blue: 0.5832718015, alpha: 1)
         let addConfig = UISwipeActionsConfiguration(actions: [addAction])
         addConfig.performsFirstActionWithFullSwipe = false
         return addConfig
     }
-    
+
 //    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
 //            .insert
 //        }

@@ -64,16 +64,16 @@ class ViewController: UIViewController {
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         
-        guard let login = loginInputField.text, !login.isEmpty,
-              let password = passwordInputField.text, !password.isEmpty else {
-            alertLogin(alertText: "Заполните все поля")
-            return
-        }
-
-        guard login == "admin", password == "admin" else {
-            alertLogin(alertText: "Неверное имя пользователя или пароль")
-            return
-        }
+//        guard let login = loginInputField.text, !login.isEmpty,
+//              let password = passwordInputField.text, !password.isEmpty else {
+//            alertLogin(alertText: "Заполните все поля")
+//            return
+//        }
+//
+//        guard login == "admin", password == "admin" else {
+//            alertLogin(alertText: "Неверное имя пользователя или пароль")
+//            return
+//        }
         
         performSegue(withIdentifier: loginScreenToAppSegue, sender: nil)
         

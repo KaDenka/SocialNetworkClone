@@ -13,6 +13,10 @@ class UserGroupsTableViewController: UITableViewController {
     
     let userGroupCellIdentifier = "userGroupCellID"
     
+    @IBAction func unwindFromGlobalGroups(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +75,11 @@ class UserGroupsTableViewController: UITableViewController {
             GroupsDataStorage.shared.userGroupsArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        
+        
+        
+        
+       
         /*else if editingStyle == .insert {
          // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
          }  */

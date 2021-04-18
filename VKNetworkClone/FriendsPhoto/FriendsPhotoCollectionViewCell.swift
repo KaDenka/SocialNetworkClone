@@ -11,11 +11,12 @@ class FriendsPhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendPhotoImage: UIImageView!
     
+    @IBOutlet weak var likeControl: LikeUIControl!
+    
     func clearCell() {
         friendPhotoImage = nil
+        likeControl = nil
     }
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

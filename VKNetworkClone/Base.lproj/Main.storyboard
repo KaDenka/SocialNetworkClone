@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -197,8 +198,12 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7VY-cV-EM9" kind="unwind" identifier="fromGlobalToUserGroupsSegue" unwindAction="unwindFromGlobalGroupsWithUnwindSegue:" id="Uu4-ZZ-ucf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgc-5a-Ifa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7VY-cV-EM9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3245" y="512"/>
         </scene>
@@ -237,7 +242,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="jUa-Mg-Mq2"/>
                     <connections>
-                        <segue destination="a5Q-UM-wp6" kind="show" identifier="friendsToPhoto" id="ZBr-nk-VB6"/>
+                        <segue destination="O4E-Gp-brF" kind="show" identifier="friendsToPhoto" id="lRn-6K-BtZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYG-wH-5dP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -245,32 +250,55 @@
             <point key="canvasLocation" x="2439" y="-218"/>
         </scene>
         <!--Фотографии-->
-        <scene sceneID="X7C-re-Grn">
+        <scene sceneID="2g5-OI-TD7">
             <objects>
-                <collectionViewController id="a5Q-UM-wp6" customClass="FriendsPhotoCollectionViewController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" id="gOE-Kt-7A4">
+                <viewController id="O4E-Gp-brF" customClass="FriendPhotoViewController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ikm-KR-lWf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-BV-eTv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dQL-mz-gYV">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendPhotoCollection" id="bA0-I0-NWq">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V2M-4A-1n1">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="O4E-Gp-brF" id="Z9k-yd-xsd"/>
+                                    <outlet property="delegate" destination="O4E-Gp-brF" id="KmE-lL-bCa"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AVB-FV-7ia"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <viewLayoutGuide key="contentLayoutGuide" id="S2a-Cq-lh4"/>
-                        <viewLayoutGuide key="frameLayoutGuide" id="Qhn-Yy-nxI"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DI9-IW-h09">
-                            <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="a5Q-UM-wp6" id="25T-r1-PHd"/>
-                            <outlet property="delegate" destination="a5Q-UM-wp6" id="pAq-jn-pqO"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Фотографии" id="kx2-Eg-cef"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0eX-1G-k02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="AVB-FV-7ia" firstAttribute="top" secondItem="ahC-BV-eTv" secondAttribute="top" id="V2V-3S-tCZ"/>
+                            <constraint firstItem="ahC-BV-eTv" firstAttribute="leading" secondItem="AVB-FV-7ia" secondAttribute="leading" id="eZe-0z-rXx"/>
+                            <constraint firstItem="AVB-FV-7ia" firstAttribute="trailing" secondItem="ahC-BV-eTv" secondAttribute="trailing" id="hHl-Wl-pHc"/>
+                            <constraint firstItem="AVB-FV-7ia" firstAttribute="bottom" secondItem="ahC-BV-eTv" secondAttribute="bottom" id="zU9-jr-Dxs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Фотографии" id="CUV-g3-w7j"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ahC-BV-eTv" id="mAb-VH-rvb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhj-tW-zxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3246" y="-218"/>
+            <point key="canvasLocation" x="3244.9275362318845" y="-218.30357142857142"/>
         </scene>
     </scenes>
     <resources>

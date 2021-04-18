@@ -9,14 +9,14 @@ import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var avatarImage: AvatarUIView!
     
     @IBOutlet weak var lastNameLabel: UILabel!
     
     @IBOutlet weak var firstNameLabel: UILabel!
     
     func clearCell() {
-        avatarImage.image = nil
+        avatarImage.userImage.image = nil
         lastNameLabel.text = nil
         firstNameLabel.text = nil
     }
@@ -24,11 +24,14 @@ class FriendsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         clearCell()
+        
+         
+         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -38,9 +41,10 @@ class FriendsTableViewCell: UITableViewCell {
     
     func configFriendCell(index: IndexPath) {
         if let avatar = UsersDataStorage.shared.usersArray[index.row].avatar {
-            avatarImage.image = avatar
-        } else { avatarImage.image = UIImage(named: "noUserAvatarImage")}
+            avatarImage.userImage.image = avatar
+        } else { avatarImage.userImage.image = UIImage(named: "noUserAvatarImage")}
         lastNameLabel.text = UsersDataStorage.shared.usersArray[index.row].lastName
         firstNameLabel.text = UsersDataStorage.shared.usersArray[index.row].firstName
+        
     }
 }
