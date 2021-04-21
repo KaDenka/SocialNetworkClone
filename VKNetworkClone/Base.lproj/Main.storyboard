@@ -262,8 +262,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Друзья" id="bUi-Ue-eRI"/>
                     <connections>
-                        <outlet property="friendsList" destination="cGK-Nu-Qui" id="sG6-oT-Jcn"/>
                         <outlet property="friendsListControl" destination="XfD-oS-V0K" id="fRP-NM-8RB"/>
+                        <outlet property="friendsListTableView" destination="cGK-Nu-Qui" id="isl-Jz-1u3"/>
                         <segue destination="O4E-Gp-brF" kind="show" identifier="friendsToPhoto" id="Djo-Jc-GoN"/>
                     </connections>
                 </viewController>

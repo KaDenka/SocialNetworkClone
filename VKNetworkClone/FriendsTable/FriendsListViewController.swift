@@ -8,10 +8,10 @@
 import UIKit
 
 var usersDictionary = Dictionary(grouping: UsersDataStorage.shared.usersArray, by: { String($0.lastName.trimmingCharacters(in: .whitespaces).first!) }).sorted(by: { $0.0 < $1.0 })
+
+class FriendsListViewController: UIViewController, AlphabetControlDelegate {
     
-class FriendsListViewController: UIViewController {
-    
-    @IBOutlet weak var friendsList: UITableView!
+    @IBOutlet weak var friendsListTableView: UITableView!
     @IBOutlet weak var friendsListControl: AlphabetControl!
     let friendsToPhotoSegue = "friendsToPhoto"
     
@@ -19,12 +19,12 @@ class FriendsListViewController: UIViewController {
     
     let friendsCellIdentifier = "friendsCellID"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        friendsList.register(friendsCellNib, forCellReuseIdentifier: friendsCellIdentifier)
+        friendsListTableView.register(friendsCellNib, forCellReuseIdentifier: friendsCellIdentifier)
         
+        friendsListControl.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -38,7 +38,7 @@ class FriendsListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == friendsToPhotoSegue else { return }
         guard let destination = segue.destination as? FriendPhotoViewController else { return }
-        destination.indexPathOfFriend = self.friendsList.indexPathForSelectedRow!
+        destination.indexPathOfFriend = self.friendsListTableView.indexPathForSelectedRow!
     }
     
     
@@ -62,14 +62,11 @@ extension FriendsListViewController: UITableViewDataSource {
         return usersDictionary[section].value.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: friendsCellIdentifier, for: indexPath) as! FriendsTableViewCell
         cell.configFriendCell(index: indexPath)
         return cell
     }
-    
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if UsersDataStorage.shared.usersArray[indexPath.row].photoArray != nil {
@@ -79,12 +76,13 @@ extension FriendsListViewController: UITableViewDataSource {
         }
     }
     
-    
-    
-    
 }
 
 extension FriendsListViewController: UITableViewDelegate {
     
-    
+    func buttonPushed(index: IndexPath) {
+        self.friendsListTableView.scrollToRow(at: index, at: .top, animated: true)
+    }
 }
+
+

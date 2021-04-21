@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol AlphabetControlDelegate: class {
+    func buttonPushed(index: IndexPath)
+}
 
 
 @IBDesignable class AlphabetControl: UIControl {
@@ -17,6 +19,8 @@ import UIKit
     var buttonsArray = [UIButton]()
     
     var lettersArray = [Character]()
+    
+    weak var delegate: AlphabetControlDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,14 +62,14 @@ import UIKit
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillEqually
-        stackView.spacing = 4
+        stackView.spacing = 2
 
     }
     
     @objc private func selectLetter(_ sender: UIButton) {
         guard self.buttonsArray.firstIndex(of: sender) != nil else { return }
-
-        
+        let indexPath = IndexPath(row: 0, section: Int(buttonsArray.firstIndex(of: sender)!))
+        delegate?.buttonPushed(index: indexPath)
     }
     
     
