@@ -40,11 +40,11 @@ class FriendsTableViewCell: UITableViewCell {
     }
     
     func configFriendCell(index: IndexPath) {
-        if let avatar = UsersDataStorage.shared.usersArray[index.row].avatar {
+        if let avatar = usersDictionary[index.section].value[index.row].avatar {
             avatarImage.userImage.image = avatar
         } else { avatarImage.userImage.image = UIImage(named: "noUserAvatarImage")}
-        lastNameLabel.text = UsersDataStorage.shared.usersArray[index.row].lastName
-        firstNameLabel.text = UsersDataStorage.shared.usersArray[index.row].firstName
+        lastNameLabel.text = usersDictionary[index.section].value[index.row].lastName
+        firstNameLabel.text = usersDictionary[index.section].value[index.row].firstName
         
     }
 }

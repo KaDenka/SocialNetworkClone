@@ -14,13 +14,8 @@ enum LikeButtonState {
 
 @IBDesignable class LikeUIControl: UIControl {
     
-    var likeState: LikeButtonState = .dislike
-    
-    // private var heartButton = UIButton(type: .system)
-    
-    //private var likeLabel = UILabel()
-    
     private var stackView: UIStackView!
+    var likeState: LikeButtonState = .dislike
     let heartButton = UIButton(type: .system)
     let likeLabel = UILabel()
     
@@ -35,7 +30,6 @@ enum LikeButtonState {
     }
     
     private func setupView() {
-        
         heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
         heartButton.backgroundColor = UIColor.clear
         heartButton.tintColor = UIColor.blue
@@ -51,8 +45,6 @@ enum LikeButtonState {
         stackView.distribution = .fillEqually
     }
     
-    
-    
     @objc private func pushLike(_ sender: UIButton) {
         if likeState == .dislike {
             heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -66,7 +58,6 @@ enum LikeButtonState {
             likeState = .dislike
             likeLabel.textColor = UIColor.blue
             likeLabel.text = "0"
-            
         }
     }
     

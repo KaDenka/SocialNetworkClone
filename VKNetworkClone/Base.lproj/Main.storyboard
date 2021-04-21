@@ -210,7 +210,7 @@
         <!--Друзья-->
         <scene sceneID="j1b-Ab-iHD">
             <objects>
-                <navigationController id="NNL-xJ-ybU" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="flipHorizontal" id="NNL-xJ-ybU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.3" catalog="system" id="BUZ-S0-42G"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bSv-5l-WYp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -219,7 +219,7 @@
                         <color key="barTintColor" red="0.23182553049999999" green="0.40431624649999998" blue="0.56864780189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0os-Xo-tRK" kind="relationship" relationship="rootViewController" id="uC5-wr-cmN"/>
+                        <segue destination="sdG-hm-kAW" kind="relationship" relationship="rootViewController" id="3cs-TY-BEV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRZ-8k-FZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,27 +227,49 @@
             <point key="canvasLocation" x="1603" y="-217"/>
         </scene>
         <!--Друзья-->
-        <scene sceneID="E74-Bx-QfQ">
+        <scene sceneID="WsJ-Of-E6J">
             <objects>
-                <tableViewController id="0os-Xo-tRK" customClass="FriendsTableViewController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="t5u-an-xS1">
+                <viewController id="sdG-hm-kAW" customClass="FriendsListViewController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ruj-l9-qCW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGK-Nu-Qui">
+                                <rect key="frame" x="0.0" y="88" width="315" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sdG-hm-kAW" id="lyM-bp-juE"/>
+                                    <outlet property="delegate" destination="sdG-hm-kAW" id="ghs-5n-7dl"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-oS-V0K" customClass="AlphabetControl" customModule="VKNetworkClone" customModuleProvider="target">
+                                <rect key="frame" x="331" y="244" width="83" height="405"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aqC-Vq-m3E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="0os-Xo-tRK" id="fDv-aU-Zgw"/>
-                            <outlet property="delegate" destination="0os-Xo-tRK" id="Rsj-TD-Trq"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="jUa-Mg-Mq2"/>
+                        <constraints>
+                            <constraint firstItem="XfD-oS-V0K" firstAttribute="top" secondItem="aqC-Vq-m3E" secondAttribute="top" constant="156" id="G87-KR-ZN9"/>
+                            <constraint firstItem="XfD-oS-V0K" firstAttribute="trailing" secondItem="aqC-Vq-m3E" secondAttribute="trailing" id="b2g-Wm-hDl"/>
+                            <constraint firstItem="XfD-oS-V0K" firstAttribute="leading" secondItem="Ruj-l9-qCW" secondAttribute="leading" constant="331" id="e0q-bh-oS0"/>
+                            <constraint firstItem="cGK-Nu-Qui" firstAttribute="bottom" secondItem="aqC-Vq-m3E" secondAttribute="bottom" id="ey8-k4-9NV"/>
+                            <constraint firstItem="XfD-oS-V0K" firstAttribute="leading" secondItem="cGK-Nu-Qui" secondAttribute="trailing" constant="16" id="heQ-jP-cjr"/>
+                            <constraint firstItem="cGK-Nu-Qui" firstAttribute="top" secondItem="aqC-Vq-m3E" secondAttribute="top" id="i72-7Q-lu9"/>
+                            <constraint firstItem="cGK-Nu-Qui" firstAttribute="leading" secondItem="aqC-Vq-m3E" secondAttribute="leading" id="lCP-9B-ilj"/>
+                            <constraint firstItem="aqC-Vq-m3E" firstAttribute="bottom" secondItem="XfD-oS-V0K" secondAttribute="bottom" constant="164" id="s7u-2V-YkQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Друзья" id="bUi-Ue-eRI"/>
                     <connections>
-                        <segue destination="O4E-Gp-brF" kind="show" identifier="friendsToPhoto" id="lRn-6K-BtZ"/>
+                        <outlet property="friendsList" destination="cGK-Nu-Qui" id="sG6-oT-Jcn"/>
+                        <outlet property="friendsListControl" destination="XfD-oS-V0K" id="fRP-NM-8RB"/>
+                        <segue destination="O4E-Gp-brF" kind="show" identifier="friendsToPhoto" id="Djo-Jc-GoN"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qYG-wH-5dP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VX0-Dk-FcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="-218"/>
+            <point key="canvasLocation" x="2437.68115942029" y="-218.30357142857142"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="2g5-OI-TD7">
