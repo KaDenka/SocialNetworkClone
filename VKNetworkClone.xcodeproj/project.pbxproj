@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0C9C3D2635AC5B009C71BC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0C9C3C2635AC5B009C71BC /* NewsViewController.swift */; };
+		CA0C9C422635AC80009C71BC /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0C9C402635AC80009C71BC /* NewsTableViewCell.swift */; };
+		CA0C9C432635AC80009C71BC /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0C9C412635AC80009C71BC /* NewsTableViewCell.xib */; };
 		CA0D60F12623397C00EDB885 /* UsersDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D60F02623397C00EDB885 /* UsersDataStorage.swift */; };
 		CA0D60F426233A6700EDB885 /* GroupsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D60F326233A6700EDB885 /* GroupsDataStorage.swift */; };
 		CA0D60FB2623474B00EDB885 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D60FA2623474B00EDB885 /* User.swift */; };
@@ -17,6 +20,8 @@
 		CA7B2A72262312F700B9A179 /* GroupsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7B2A70262312F700B9A179 /* GroupsTableViewCell.xib */; };
 		CA7D8F03262D5A7100EA1C35 /* AlphabetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8F02262D5A7100EA1C35 /* AlphabetControl.swift */; };
 		CA7D8F06262D697A00EA1C35 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8F05262D697A00EA1C35 /* FriendsListViewController.swift */; };
+		CA9B5F092635B8D900A6DE12 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B5F082635B8D900A6DE12 /* News.swift */; };
+		CA9B5F0C2635BA7700A6DE12 /* NewsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B5F0B2635BA7700A6DE12 /* NewsDataStorage.swift */; };
 		CA9CD35026189FB0005231C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD34F26189FB0005231C2 /* AppDelegate.swift */; };
 		CA9CD35226189FB0005231C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD35126189FB0005231C2 /* SceneDelegate.swift */; };
 		CA9CD35426189FB0005231C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD35326189FB0005231C2 /* ViewController.swift */; };
@@ -34,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0C9C3C2635AC5B009C71BC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		CA0C9C402635AC80009C71BC /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		CA0C9C412635AC80009C71BC /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		CA0D60F02623397C00EDB885 /* UsersDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataStorage.swift; sourceTree = "<group>"; };
 		CA0D60F326233A6700EDB885 /* GroupsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDataStorage.swift; sourceTree = "<group>"; };
 		CA0D60FA2623474B00EDB885 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -44,6 +52,8 @@
 		CA7B2A70262312F700B9A179 /* GroupsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsTableViewCell.xib; sourceTree = "<group>"; };
 		CA7D8F02262D5A7100EA1C35 /* AlphabetControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetControl.swift; sourceTree = "<group>"; };
 		CA7D8F05262D697A00EA1C35 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		CA9B5F082635B8D900A6DE12 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		CA9B5F0B2635BA7700A6DE12 /* NewsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataStorage.swift; sourceTree = "<group>"; };
 		CA9CD34C26189FB0005231C2 /* VKNetworkClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNetworkClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9CD34F26189FB0005231C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9CD35126189FB0005231C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,14 +83,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA0C9C3B2635AC17009C71BC /* NewsTable */ = {
+			isa = PBXGroup;
+			children = (
+				CA0C9C3C2635AC5B009C71BC /* NewsViewController.swift */,
+				CA0C9C402635AC80009C71BC /* NewsTableViewCell.swift */,
+				CA0C9C412635AC80009C71BC /* NewsTableViewCell.xib */,
+			);
+			path = NewsTable;
+			sourceTree = "<group>";
+		};
 		CA7B2A6726230FBE00B9A179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CA0D60FA2623474B00EDB885 /* User.swift */,
 				CA0D60FE2623488700EDB885 /* Group.swift */,
+				CA9B5F082635B8D900A6DE12 /* News.swift */,
 				CA0D60F02623397C00EDB885 /* UsersDataStorage.swift */,
 				CA0D60F326233A6700EDB885 /* GroupsDataStorage.swift */,
 				CAC3AFAE262B2C4700DCBCF1 /* AvatarUIView.swift */,
+				CA9B5F0B2635BA7700A6DE12 /* NewsDataStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +133,7 @@
 				CAA4F800262BF0B7002D83A2 /* FriendsTable */,
 				CAA4F802262BF0F7002D83A2 /* FriendsPhoto */,
 				CAA4F805262BF137002D83A2 /* GroupsTable */,
+				CA0C9C3B2635AC17009C71BC /* NewsTable */,
 				CA9CD35526189FB0005231C2 /* Main.storyboard */,
 				CA9CD35826189FB1005231C2 /* Assets.xcassets */,
 				CA9CD35A26189FB1005231C2 /* LaunchScreen.storyboard */,
@@ -213,6 +236,7 @@
 				CA9CD35C26189FB1005231C2 /* LaunchScreen.storyboard in Resources */,
 				CA7B2A72262312F700B9A179 /* GroupsTableViewCell.xib in Resources */,
 				CA9CD35926189FB1005231C2 /* Assets.xcassets in Resources */,
+				CA0C9C432635AC80009C71BC /* NewsTableViewCell.xib in Resources */,
 				CAF5D4F02622EC4700A6B0DF /* FriendsPhotoCollectionViewCell.xib in Resources */,
 				CA9CD35726189FB0005231C2 /* Main.storyboard in Resources */,
 				CAF5D4E82622BD0A00A6B0DF /* FriendsTableViewCell.xib in Resources */,
@@ -228,12 +252,15 @@
 			files = (
 				CA9CD35426189FB0005231C2 /* ViewController.swift in Sources */,
 				CAEBFA88261DA18200C66DD8 /* AppTabBarController.swift in Sources */,
+				CA0C9C422635AC80009C71BC /* NewsTableViewCell.swift in Sources */,
 				CA9CD35026189FB0005231C2 /* AppDelegate.swift in Sources */,
 				CA0D60FF2623488700EDB885 /* Group.swift in Sources */,
 				CA7D8F06262D697A00EA1C35 /* FriendsListViewController.swift in Sources */,
 				CA7D8F03262D5A7100EA1C35 /* AlphabetControl.swift in Sources */,
 				CA0D60FB2623474B00EDB885 /* User.swift in Sources */,
+				CA0C9C3D2635AC5B009C71BC /* NewsViewController.swift in Sources */,
 				CAC3AFAF262B2C4700DCBCF1 /* AvatarUIView.swift in Sources */,
+				CA9B5F0C2635BA7700A6DE12 /* NewsDataStorage.swift in Sources */,
 				CA7B2A6C262312B500B9A179 /* SearchGroupsTableViewController.swift in Sources */,
 				CAF5D4EF2622EC4700A6B0DF /* FriendsPhotoCollectionViewCell.swift in Sources */,
 				CAF5D4E72622BD0A00A6B0DF /* FriendsTableViewCell.swift in Sources */,
@@ -242,6 +269,7 @@
 				CAA4F80F262C0D43002D83A2 /* FriendPhotoViewController.swift in Sources */,
 				CA7B2A71262312F700B9A179 /* GroupsTableViewCell.swift in Sources */,
 				CA7B2A692623127C00B9A179 /* UserGroupsTableViewController.swift in Sources */,
+				CA9B5F092635B8D900A6DE12 /* News.swift in Sources */,
 				CA0D60F426233A6700EDB885 /* GroupsDataStorage.swift in Sources */,
 				CA0D60F12623397C00EDB885 /* UsersDataStorage.swift in Sources */,
 			);

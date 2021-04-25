@@ -24,6 +24,8 @@ class FriendsListViewController: UIViewController, AlphabetControlDelegate {
         
         friendsListTableView.register(friendsCellNib, forCellReuseIdentifier: friendsCellIdentifier)
         
+        
+        
         friendsListControl.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -53,9 +55,9 @@ extension FriendsListViewController: UITableViewDataSource {
         return usersDictionary.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return usersDictionary[section].key
-    }
+    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        return usersDictionary[section].key
+    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -66,6 +68,22 @@ extension FriendsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: friendsCellIdentifier, for: indexPath) as! FriendsTableViewCell
         cell.configFriendCell(index: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        let title = UILabel()
+        title.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30)
+        title.backgroundColor =  #colorLiteral(red: 0.2143571675, green: 0.4973421693, blue: 0.6577147245, alpha: 0.5)
+        title.textAlignment = .center
+        title.text = usersDictionary[section].key
+        title.tintColor = UIColor.black
+        view.addSubview(title)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        30
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -48,4 +48,11 @@ class GroupsTableViewCell: UITableViewCell {
         } else { groupAvatar.image = UIImage(named: "noGroupAvatarImage")}
         groupLabel.text = GroupsDataStorage.shared.globalGroupsArray[index.row].name
     }
+    
+    func configSearchedGroupsCell(index: IndexPath) {
+        if let avatar = searchedGroups[index.row].avatar {
+            groupAvatar.image = avatar
+        } else { groupAvatar.image = UIImage(named: "noGroupAvatarImage")}
+        groupLabel.text = searchedGroups[index.row].name
+    }
 }

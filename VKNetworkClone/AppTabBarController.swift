@@ -19,6 +19,7 @@ class AppTabBarController: UITabBarController {
         UsersDataStorage.shared.firstLoadFriendList()
         GroupsDataStorage.shared.firstLoadUsersGroupList()
         GroupsDataStorage.shared.firstLoadGlobalGroupList()
+        NewsDataStorage.shared.firstLoadNews()
     
     }
     

@@ -19,7 +19,7 @@ class UserGroupsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tableView.register(userGroupCellNib, forCellReuseIdentifier: userGroupCellIdentifier)
         
         
