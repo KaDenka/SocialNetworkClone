@@ -31,6 +31,8 @@
 		CAA4F807262BF1A9002D83A2 /* LikeUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA4F806262BF1A9002D83A2 /* LikeUIControl.swift */; };
 		CAA4F80F262C0D43002D83A2 /* FriendPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA4F80E262C0D43002D83A2 /* FriendPhotoViewController.swift */; };
 		CAC3AFAF262B2C4700DCBCF1 /* AvatarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC3AFAE262B2C4700DCBCF1 /* AvatarUIView.swift */; };
+		CAE691182639E6FA001057A5 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE691172639E6FA001057A5 /* ActivityIndicatorView.swift */; };
+		CAE6911B2639E709001057A5 /* ActivityIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE6911A2639E709001057A5 /* ActivityIndicatorView.xib */; };
 		CAEBFA88261DA18200C66DD8 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEBFA87261DA18200C66DD8 /* AppTabBarController.swift */; };
 		CAF5D4E72622BD0A00A6B0DF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF5D4E52622BD0A00A6B0DF /* FriendsTableViewCell.swift */; };
 		CAF5D4E82622BD0A00A6B0DF /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAF5D4E62622BD0A00A6B0DF /* FriendsTableViewCell.xib */; };
@@ -65,6 +67,8 @@
 		CAA4F806262BF1A9002D83A2 /* LikeUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUIControl.swift; sourceTree = "<group>"; };
 		CAA4F80E262C0D43002D83A2 /* FriendPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoViewController.swift; sourceTree = "<group>"; };
 		CAC3AFAE262B2C4700DCBCF1 /* AvatarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarUIView.swift; sourceTree = "<group>"; };
+		CAE691172639E6FA001057A5 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		CAE6911A2639E709001057A5 /* ActivityIndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicatorView.xib; sourceTree = "<group>"; };
 		CAEBFA87261DA18200C66DD8 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		CAF5D4E52622BD0A00A6B0DF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		CAF5D4E62622BD0A00A6B0DF /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,13 +132,12 @@
 			children = (
 				CA9CD34F26189FB0005231C2 /* AppDelegate.swift */,
 				CA9CD35126189FB0005231C2 /* SceneDelegate.swift */,
-				CA9CD35326189FB0005231C2 /* ViewController.swift */,
-				CAEBFA87261DA18200C66DD8 /* AppTabBarController.swift */,
+				CA9CD35526189FB0005231C2 /* Main.storyboard */,
+				CAE691152639E688001057A5 /* LoginScreen */,
 				CAA4F800262BF0B7002D83A2 /* FriendsTable */,
 				CAA4F802262BF0F7002D83A2 /* FriendsPhoto */,
 				CAA4F805262BF137002D83A2 /* GroupsTable */,
 				CA0C9C3B2635AC17009C71BC /* NewsTable */,
-				CA9CD35526189FB0005231C2 /* Main.storyboard */,
 				CA9CD35826189FB1005231C2 /* Assets.xcassets */,
 				CA9CD35A26189FB1005231C2 /* LaunchScreen.storyboard */,
 				CA9CD35D26189FB1005231C2 /* Info.plist */,
@@ -174,6 +177,17 @@
 				CA7B2A70262312F700B9A179 /* GroupsTableViewCell.xib */,
 			);
 			path = GroupsTable;
+			sourceTree = "<group>";
+		};
+		CAE691152639E688001057A5 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CD35326189FB0005231C2 /* ViewController.swift */,
+				CAEBFA87261DA18200C66DD8 /* AppTabBarController.swift */,
+				CAE691172639E6FA001057A5 /* ActivityIndicatorView.swift */,
+				CAE6911A2639E709001057A5 /* ActivityIndicatorView.xib */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,7 @@
 				CAF5D4F02622EC4700A6B0DF /* FriendsPhotoCollectionViewCell.xib in Resources */,
 				CA9CD35726189FB0005231C2 /* Main.storyboard in Resources */,
 				CAF5D4E82622BD0A00A6B0DF /* FriendsTableViewCell.xib in Resources */,
+				CAE6911B2639E709001057A5 /* ActivityIndicatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +282,7 @@
 				CAA4F807262BF1A9002D83A2 /* LikeUIControl.swift in Sources */,
 				CA9CD35226189FB0005231C2 /* SceneDelegate.swift in Sources */,
 				CAA4F80F262C0D43002D83A2 /* FriendPhotoViewController.swift in Sources */,
+				CAE691182639E6FA001057A5 /* ActivityIndicatorView.swift in Sources */,
 				CA7B2A71262312F700B9A179 /* GroupsTableViewCell.swift in Sources */,
 				CA7B2A692623127C00B9A179 /* UserGroupsTableViewController.swift in Sources */,
 				CA9B5F092635B8D900A6DE12 /* News.swift in Sources */,

@@ -13,11 +13,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginScrollView: UIScrollView!
     
+    @IBOutlet weak var appAvatar: UIImageView!
+    
+    @IBOutlet weak var loginLabel: UILabel!
+    
     @IBOutlet weak var loginInputField: UITextField!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
     
     @IBOutlet weak var passwordInputField: UITextField!
     
     @IBOutlet weak var signInButton: UIButton!
+    
+    @IBOutlet weak var activityIndicator: ActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +37,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         loginScrollView?.addGestureRecognizer(hideKeyboardGesture)
+        
+        activityIndicator.isHidden = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,6 +73,16 @@ class ViewController: UIViewController {
         present(alertMessage, animated: true, completion: nil)
     }
     
+    func hideElements() {
+        appAvatar.isHidden = true
+        loginLabel.isHidden = true
+        loginInputField.isHidden = true
+        passwordLabel.isHidden = true
+        passwordInputField.isHidden = true
+        signInButton.isHidden = true
+        
+    }
+    
     @IBAction func signInButtonPressed(_ sender: Any) {
         
 //        guard let login = loginInputField.text, !login.isEmpty,
@@ -75,7 +96,15 @@ class ViewController: UIViewController {
 //            return
 //        }
         
-        performSegue(withIdentifier: loginScreenToAppSegue, sender: nil)
+        hideElements()
+        activityIndicator.isHidden = false
+        activityIndicator.animation()
+        
+        let seconds = 8.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+            performSegue(withIdentifier: loginScreenToAppSegue, sender: nil)
+        }
+        
         
     }
     

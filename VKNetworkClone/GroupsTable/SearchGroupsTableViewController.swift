@@ -140,4 +140,10 @@ extension SearchGroupsTableViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? GroupsTableViewCell {
+            cell.pushAnimation()
+        }
+    }
+    
 }

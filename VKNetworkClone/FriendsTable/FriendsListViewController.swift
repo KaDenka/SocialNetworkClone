@@ -12,7 +12,9 @@ var usersDictionary = Dictionary(grouping: UsersDataStorage.shared.usersArray, b
 class FriendsListViewController: UIViewController, AlphabetControlDelegate {
     
     @IBOutlet weak var friendsListTableView: UITableView!
+    
     @IBOutlet weak var friendsListControl: AlphabetControl!
+    
     let friendsToPhotoSegue = "friendsToPhoto"
     
     let friendsCellNib = UINib(nibName: "FriendsTableViewCell", bundle: nil)
@@ -55,10 +57,6 @@ extension FriendsListViewController: UITableViewDataSource {
         return usersDictionary.count
     }
     
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return usersDictionary[section].key
-    //    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return usersDictionary[section].value.count
@@ -87,10 +85,22 @@ extension FriendsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if UsersDataStorage.shared.usersArray[indexPath.row].photoArray != nil {
-            performSegue(withIdentifier: friendsToPhotoSegue, sender: nil)
+        
+        let seconds = 0.2
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? FriendsTableViewCell {
+            cell.pushAnimation()
+        }
+        
+        if usersDictionary[indexPath.section].value[indexPath.row].photoArray != nil   {
+           
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+                performSegue(withIdentifier: friendsToPhotoSegue, sender: nil)
+            }
         } else {
-            alertNoPhotoAvailable(alertText: "У этого пользователя нет фотографий.")
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
+                alertNoPhotoAvailable(alertText: "У этого пользователя нет фотографий.")
+            }
         }
     }
     

@@ -55,4 +55,11 @@ class GroupsTableViewCell: UITableViewCell {
         } else { groupAvatar.image = UIImage(named: "noGroupAvatarImage")}
         groupLabel.text = searchedGroups[index.row].name
     }
+    
+    func pushAnimation() {
+        self.groupAvatar.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.groupAvatar.transform = .identity
+        }, completion: nil)
+    }
 }

@@ -26,7 +26,8 @@ class FriendPhotoViewController: UIViewController {
         
         collectionView.register(friendPhotoCellNib, forCellWithReuseIdentifier: friendPhotoCellIdentifier)
         
-        if let check = UsersDataStorage.shared.usersArray[indexPathOfFriend.row].photoArray {
+        if let check =
+            usersDictionary[indexPathOfFriend.section].value[indexPathOfFriend.row].photoArray {
             array = check
         }
         

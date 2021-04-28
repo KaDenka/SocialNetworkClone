@@ -47,17 +47,33 @@ enum LikeButtonState {
     
     @objc private func pushLike(_ sender: UIButton) {
         if likeState == .dislike {
-            heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            heartButton.tintColor = UIColor.red
+            
+            UIView.transition(with: heartButton, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                self.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                self.heartButton.tintColor = UIColor.red
+            }, completion: nil)
+            
+            UIView.transition(with: likeLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+                self.likeLabel.textColor = UIColor.red
+                self.likeLabel.text = "1"
+            }, completion: nil)
+            
             likeState = .like
-            likeLabel.textColor = UIColor.red
-            likeLabel.text = "1"
+            
         } else {
-            heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            heartButton.tintColor = UIColor.blue
+            
+            UIView.transition(with: heartButton, duration: 0.5, options: .transitionFlipFromRight, animations: {
+                self.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                self.heartButton.tintColor = UIColor.blue
+            }, completion: nil)
+            
+            UIView.transition(with: likeLabel, duration: 0.5, options: .transitionFlipFromTop, animations: {
+                self.likeLabel.textColor = UIColor.blue
+                self.likeLabel.text = "0"
+            }, completion: nil)
+            
             likeState = .dislike
-            likeLabel.textColor = UIColor.blue
-            likeLabel.text = "0"
+            
         }
     }
     

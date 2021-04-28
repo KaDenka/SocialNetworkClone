@@ -63,18 +63,26 @@
                                             <constraint firstAttribute="height" constant="70" id="Tpg-v6-V8K"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo7-an-YDi" customClass="ActivityIndicatorView" customModule="VKNetworkClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="300" width="414" height="167"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85519913093379007" green="0.85106773416599402" blue="0.85933052770158613" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="CbG-08-sJa" firstAttribute="centerX" secondItem="KTW-Ed-Ipj" secondAttribute="centerX" id="00d-Cf-3ef"/>
+                                    <constraint firstAttribute="bottom" secondItem="uo7-an-YDi" secondAttribute="bottom" constant="300" id="09K-RC-m8Q"/>
                                     <constraint firstItem="Qd9-Df-zQV" firstAttribute="centerX" secondItem="KTW-Ed-Ipj" secondAttribute="centerX" id="5E5-XB-1Tk"/>
                                     <constraint firstItem="po5-77-fCI" firstAttribute="centerX" secondItem="KTW-Ed-Ipj" secondAttribute="centerX" id="7Ut-MP-P5U"/>
                                     <constraint firstItem="CbG-08-sJa" firstAttribute="leading" secondItem="KTW-Ed-Ipj" secondAttribute="leading" constant="70" id="AGT-aH-qRU"/>
+                                    <constraint firstItem="uo7-an-YDi" firstAttribute="leading" secondItem="KTW-Ed-Ipj" secondAttribute="leading" id="F9R-Yl-2jn"/>
                                     <constraint firstItem="IUg-M6-i6v" firstAttribute="centerX" secondItem="KTW-Ed-Ipj" secondAttribute="centerX" id="GpX-UX-o1Q"/>
                                     <constraint firstItem="po5-77-fCI" firstAttribute="top" secondItem="XkP-d7-KOh" secondAttribute="bottom" constant="20" id="HFE-lZ-aGt"/>
+                                    <constraint firstAttribute="trailing" secondItem="uo7-an-YDi" secondAttribute="trailing" id="Nba-bq-S7Z"/>
                                     <constraint firstItem="CbG-08-sJa" firstAttribute="top" secondItem="KTW-Ed-Ipj" secondAttribute="top" constant="130" id="XQe-he-1gx"/>
                                     <constraint firstItem="PPN-Ch-qgE" firstAttribute="centerX" secondItem="KTW-Ed-Ipj" secondAttribute="centerX" id="adr-DH-TcZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Qd9-Df-zQV" secondAttribute="bottom" constant="187" id="eu1-QW-2A9"/>
+                                    <constraint firstItem="uo7-an-YDi" firstAttribute="top" secondItem="KTW-Ed-Ipj" secondAttribute="top" constant="300" id="fq7-EU-Tfl"/>
                                     <constraint firstItem="IUg-M6-i6v" firstAttribute="top" secondItem="po5-77-fCI" secondAttribute="bottom" constant="40" id="hRX-jP-AOu"/>
                                     <constraint firstItem="Qd9-Df-zQV" firstAttribute="top" secondItem="PPN-Ch-qgE" secondAttribute="bottom" constant="60" id="hq9-F5-yb2"/>
                                     <constraint firstItem="po5-77-fCI" firstAttribute="leading" secondItem="KTW-Ed-Ipj" secondAttribute="leading" constant="50" id="jCv-sN-5Wt"/>
@@ -98,9 +106,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="uo7-an-YDi" id="VL8-hP-Rhv"/>
+                        <outlet property="appAvatar" destination="CbG-08-sJa" id="J1S-fx-NrE"/>
                         <outlet property="loginInputField" destination="po5-77-fCI" id="6Q0-px-eMM"/>
+                        <outlet property="loginLabel" destination="XkP-d7-KOh" id="a4Y-r2-GRT"/>
                         <outlet property="loginScrollView" destination="KTW-Ed-Ipj" id="zR3-nm-T3K"/>
                         <outlet property="passwordInputField" destination="PPN-Ch-qgE" id="xzY-1O-aml"/>
+                        <outlet property="passwordLabel" destination="IUg-M6-i6v" id="XSK-Jt-WSl"/>
                         <outlet property="signInButton" destination="Qd9-Df-zQV" id="KIK-Xz-xuU"/>
                         <segue destination="8mY-X9-mY8" kind="presentation" identifier="loginScreenToApp" modalPresentationStyle="fullScreen" id="TZh-YP-Nxf"/>
                     </connections>
@@ -253,7 +265,6 @@
         <!--Новости-->
         <scene sceneID="Z1v-4s-F0c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NeP-LO-hDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="dK3-n8-XGu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="MYg-Xh-r8e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s8Y-nK-qpi">
@@ -266,6 +277,7 @@
                         <segue destination="0Dc-Li-bL3" kind="relationship" relationship="rootViewController" id="LqS-GO-0cM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NeP-LO-hDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1603" y="-919"/>
         </scene>

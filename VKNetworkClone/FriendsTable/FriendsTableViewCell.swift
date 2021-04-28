@@ -47,4 +47,12 @@ class FriendsTableViewCell: UITableViewCell {
         firstNameLabel.text = usersDictionary[index.section].value[index.row].firstName
         
     }
+    
+    func pushAnimation() {
+        self.avatarImage.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.avatarImage.transform = .identity
+        }, completion: nil)
+    }
+    
 }
