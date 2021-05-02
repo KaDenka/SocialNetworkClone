@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AlphabetControlDelegate: class {
+protocol AlphabetControlDelegate: AnyObject {
     func buttonPushed(index: IndexPath)
 }
 

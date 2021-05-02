@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.animation()
         
-        let seconds = 8.0
+        let seconds = 1.0 //8.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
             performSegue(withIdentifier: loginScreenToAppSegue, sender: nil)
         }

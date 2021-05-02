@@ -19,8 +19,8 @@ class UsersDataStorage: NSObject {
     
     func firstLoadFriendList() {
         UsersDataStorage.shared.usersArray = [
-            User(lastName: "Ivanov", firstName: "Ivan", age: 24, avatar: UIImage(named: "ivanovAvatar"), photoArray: [UIImage(named: "ivanovPhotoOne")!, UIImage(named: "ivanovPhotoTwo")!]),
-            User(lastName: "Petrova", firstName: "Anna", age: 22, avatar: UIImage(named: "petrovaAvatar"), photoArray: [UIImage(named: "petrovaPhotoOne")!]),
+            User(lastName: "Ivanov", firstName: "Ivan", age: 24, avatar: UIImage(named: "ivanovAvatar"), photoArray: [UIImage(named: "ivanovPhotoOne")!, UIImage(named: "ivanovPhotoTwo")!, UIImage(named: "ivanovPhotoThree")!]),
+            User(lastName: "Petrova", firstName: "Anna", age: 22, avatar: UIImage(named: "petrovaAvatar"), photoArray: [UIImage(named: "petrovaPhotoOne")!, UIImage(named: "petrovaPhotoTwo")!]),
             User(lastName: "Sidorov", firstName: "Alex", age: 48, avatar: nil, photoArray: nil),
             User(lastName: "Ahtungov", firstName: "Carl", age: 21, avatar: nil, photoArray: nil),
             User(lastName: "Ivanova", firstName: "Svetlana", age: 20, avatar: nil, photoArray: nil),

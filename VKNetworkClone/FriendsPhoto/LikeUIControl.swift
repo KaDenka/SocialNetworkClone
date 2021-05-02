@@ -43,6 +43,7 @@ enum LikeButtonState {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fillEqually
+        stackView.frame.size = CGSize(width: 60, height: 40)
     }
     
     @objc private func pushLike(_ sender: UIButton) {

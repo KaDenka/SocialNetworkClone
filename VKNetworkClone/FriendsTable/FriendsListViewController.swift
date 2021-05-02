@@ -41,8 +41,10 @@ class FriendsListViewController: UIViewController, AlphabetControlDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == friendsToPhotoSegue else { return }
-        guard let destination = segue.destination as? FriendPhotoViewController else { return }
-        destination.indexPathOfFriend = self.friendsListTableView.indexPathForSelectedRow!
+        guard let destination = segue.destination as? PhotoConteinersViewController else { return }
+        guard let indexPath = self.friendsListTableView.indexPathForSelectedRow else {return}
+        guard let array = usersDictionary[indexPath.section].value[indexPath.row].photoArray else {return}
+        destination.images = array
     }
     
     
@@ -93,7 +95,6 @@ extension FriendsListViewController: UITableViewDataSource {
         }
         
         if usersDictionary[indexPath.section].value[indexPath.row].photoArray != nil   {
-           
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { [self] in
                 performSegue(withIdentifier: friendsToPhotoSegue, sender: nil)
             }
