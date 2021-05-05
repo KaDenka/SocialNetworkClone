@@ -57,7 +57,7 @@ import UIKit
         mainView.contentMode = .scaleToFill
         addSubview(mainView)
         
-        secondaryView.backgroundColor = #colorLiteral(red: 0.2233942747, green: 0.571577847, blue: 0.8191457391, alpha: 1)
+        secondaryView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         secondaryView.frame = self.bounds
         secondaryView.contentMode = .scaleToFill
         secondaryView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)

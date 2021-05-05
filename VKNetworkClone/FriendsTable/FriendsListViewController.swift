@@ -113,5 +113,3 @@ extension FriendsListViewController: UITableViewDelegate {
         self.friendsListTableView.scrollToRow(at: index, at: .top, animated: true)
     }
 }
-
-

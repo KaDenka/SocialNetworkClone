@@ -145,7 +145,7 @@
         <!--Группы-->
         <scene sceneID="fJN-aS-4f9">
             <objects>
-                <navigationController id="oW5-NT-Ppl" sceneMemberID="viewController">
+                <navigationController id="oW5-NT-Ppl" customClass="CustomNavigationController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="rectangle.stack.person.crop" catalog="system" id="jXH-4f-3PW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="guN-t3-lkR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -245,7 +245,7 @@
         <!--Друзья-->
         <scene sceneID="j1b-Ab-iHD">
             <objects>
-                <navigationController modalTransitionStyle="flipHorizontal" id="NNL-xJ-ybU" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="flipHorizontal" id="NNL-xJ-ybU" customClass="CustomNavigationController" customModule="VKNetworkClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.3" catalog="system" id="BUZ-S0-42G"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bSv-5l-WYp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
