@@ -25,7 +25,7 @@ extension CustomPushAnimator: UIViewControllerAnimatedTransitioning {
         destination.view.frame = CGRect(x: source.view.frame.size.width / 2, y: 0, width: source.view.frame.width, height: source.view.frame.height)
         
         destination.view.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
-        destination.view.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(.pi/2, 0, 1, 0))
+        destination.view.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(.pi/2.1, 0, 1, 0))
         
         
         UIView.animateKeyframes(withDuration: self.transitionDuration(using: transitionContext),
